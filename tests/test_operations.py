@@ -1,4 +1,4 @@
-from src.math_operations import add, subtract
+from src.math_operations import add, subtract, divide
 
 
 def test_add():
@@ -7,3 +7,8 @@ def test_add():
 
 def test_sub():
     assert subtract(4,2)==2
+    assert subtract(5,1)==4
+
+def test_divide():
+    assert divide(9,1)==9
+    
