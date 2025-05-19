@@ -7,4 +7,4 @@ def log_func(a,b):
     return math.log(a,b)
 
 def trig_funcs(angle):
-    return math.sin(angle), math.cos(angle), math.tan(angle)
+    return math.sin(angle), math.cos(angle)
