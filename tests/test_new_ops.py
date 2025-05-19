@@ -21,13 +21,13 @@ def test_log_func():
 
 def test_trig_funcs():
     angle = math.pi / 4  # 45 degrees in radians
-    sin_val, cos_val, tan_val = trig_funcs(angle)
+    sin_val, cos_val= trig_funcs(angle)
     assert sin_val == pytest.approx(math.sqrt(2)/2)
     assert cos_val == pytest.approx(math.sqrt(2)/2)
     # assert tan_val == pytest.approx(1)
 
     angle = 0
-    sin_val, cos_val, tan_val = trig_funcs(angle)
+    sin_val, cos_val= trig_funcs(angle)
     assert sin_val == pytest.approx(0)
     assert cos_val == pytest.approx(1)
     # assert tan_val == pytest.approx(0)
