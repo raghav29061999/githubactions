@@ -1,1 +1,2 @@
-print("Raghav is")
+def str_re():
+    return "RAGHAV"

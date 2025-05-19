@@ -1,1 +1,2 @@
-print("raghav is the best, ")
+def str_ra():
+    return "RAGHAV is RAGHAV"
