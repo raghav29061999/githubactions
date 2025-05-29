@@ -21,21 +21,24 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'  # Adjust if needed
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest pytest-cov
+        pip install pytest pytest-cov black
         pip install -r src/requirements.txt  # Remove this if no requirements file
+
+    - name: Check code formatting with Black
+      run: |
+        black --check src/ tests/
 
     - name: Run pytest with coverage
       run: |
-        
         pytest tests --cov=. --cov-report=term-missing
 
     # Optional: Enforce minimum coverage (uncomment below to use)
     # - name: Run pytest with coverage threshold
     #   run: |
     #     cd app
-    #     pytest --cov=. --cov-fail-under=80  # Fails if coverage < 80%
+    #     pytest --cov=. --cov-fail-under=80
