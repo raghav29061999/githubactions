@@ -1,0 +1,1 @@
+print("ab yeh karke dikhao")
