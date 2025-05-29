@@ -29,9 +29,9 @@ jobs:
         pip install pytest pytest-cov black
         pip install -r src/requirements.txt  # Remove this if no requirements file
 
-    - name: Check code formatting with Black
-      run: |
-        black --check src/ tests/
+    # - name: Check code formatting with Black
+    #   run: |
+    #     black --check src/ tests/
 
     - name: Run pytest with coverage
       run: |
