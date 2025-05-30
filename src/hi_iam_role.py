@@ -1,0 +1,1 @@
+print('chala jaata hoon ksis kidhun me')
