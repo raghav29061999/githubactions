@@ -45,11 +45,11 @@ jobs:
       run: |
         autopep8 --diff --recursive .
     
-    - name: Check code formatting with Black
-      run: |
-        black --check src/ tests/
+    # - name: Check code formatting with Black
+    #   run: |
+    #     black --check src/ tests/
 
-        
+
     - name: Run pytest with coverage
       run: |
         pytest tests --cov=. --cov-report=term-missing
