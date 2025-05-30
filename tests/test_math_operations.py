@@ -1,5 +1,6 @@
 import pytest
-from src.math_operations import add, subtract, divide
+
+from src.math_operations import add, divide, subtract
 
 
 def test_add():

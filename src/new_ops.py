@@ -1,5 +1,6 @@
 import math
 
+
 def pow(a,b):
     return a ** b
 

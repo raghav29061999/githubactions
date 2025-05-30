@@ -1,7 +1,10 @@
 # test_math_ops.py
 import math
+
 import pytest
-from src.new_ops import pow, log_func, trig_funcs
+
+from src.new_ops import log_func, pow, trig_funcs
+
 
 def test_pow():
     assert pow(2, 3) == 8
