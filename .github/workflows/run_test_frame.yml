@@ -45,10 +45,18 @@ jobs:
       run: |
         autopep8 --diff --recursive .
     
-    # - name: Check code formatting with Black
-    #   run: |
-    #     black --check src/ tests/
+    - name: Check code formatting with Black
+      run: |
+        black --check src/ tests/
+    
+    - name: Check import sorting with isort
+      run: |
+        isort --check-only --diff .
 
+    
+    - name: Check code formatting with YAPF
+      run: |
+        yapf --diff --recursive . --exit-code
 
     - name: Run pytest with coverage
       run: |
