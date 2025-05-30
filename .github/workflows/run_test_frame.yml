@@ -31,9 +31,7 @@ jobs:
         pip install -r src/requirements.txt
         pip install pytest pytest-cov black pylint flake8 autopep8
 
-    - name: Check code formatting with Black
-      run: |
-        black --check src/ tests/
+    
 
     - name: Run Pylint for code quality
       run: |
@@ -46,7 +44,12 @@ jobs:
     - name: Check autopep8 diff
       run: |
         autopep8 --diff --recursive .
+    
+    - name: Check code formatting with Black
+      run: |
+        black --check src/ tests/
 
+        
     - name: Run pytest with coverage
       run: |
         pytest tests --cov=. --cov-report=term-missing
