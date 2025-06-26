@@ -1,0 +1,60 @@
+A2A Protocol Demo — Dockerized
+==============================
+
+This Docker image provides a preconfigured environment to test two example agents from the A2A project:
+- HelloWorld
+- LangGraph
+
+Getting Started
+---------------
+
+1. Enter the Docker container:
+   docker exec -it <container_name> bash
+
+2. Navigate to the project:
+   cd a2a-samples
+   source ./.venv/bin/activate
+
+HelloWorld Agent
+----------------
+
+Start the HelloWorld server:
+   python samples/python/agents/helloworld/__main__.py
+
+In a new terminal (activate the virtual environment again), test the client:
+   python samples/python/agents/helloworld/test_client.py
+
+LangGraph Agent
+---------------
+
+1. Add your Gemini API key to the `.env` file in:
+   samples/python/agents/langgraph/.env
+
+2. Start the LangGraph server:
+   cd samples/python/agents/langgraph/app
+   python __main__.py
+
+3. In a new terminal (with the virtual environment activated):
+
+   a. Run the test client:
+      python samples/python/agents/langgraph/app/test_client.py
+
+   b. Currency exchange example:
+      python samples/python/agents/langgraph/app/currency_exchange.py --question "10 GBP to INR"
+
+   c. Invalid query example (should respond that it's a currency agent):
+      python samples/python/agents/langgraph/app/currency_exchange.py --question "Temperature in Delhi"
+
+VS Code Interface
+-----------------
+
+Access the built-in VS Code UI at:
+   http://localhost:8443
+
+Login password: secret
+
+More Info
+---------
+
+Full tutorial and docs:
+   https://a2aproject.github.io/A2A/latest/tutorials/python/1-introduction/
