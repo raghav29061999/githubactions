@@ -34,3 +34,12 @@ def plot_super_clusters(unique_labels, reduced_embeddings, super_clusters):
     plt.legend()
     plt.title("t-SNE Super-Clusters of Cluster Labels")
     plt.show()
+
+
+# Assume df already has: issue, cleaned, cluster, cluster_label
+df, unique_labels, super_clusters, reduced_embeddings = process_cluster_labels(df)
+
+# Visualize super-clusters
+plot_super_clusters(unique_labels, reduced_embeddings, super_clusters)
+print(df[['issue', 'cluster', 'cluster_label', 'super_cluster']])
+
