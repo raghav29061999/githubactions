@@ -12,6 +12,16 @@ import hdbscan
 # ------------------------------
 # Second-level clustering using cluster labels
 # ------------------------------
+def reduce_dimensions_tsne(embeddings, n_components=2, perplexity=30, random_state=42):
+    tsne = TSNE(
+        n_components=n_components,
+        perplexity=perplexity,
+        random_state=random_state,
+        init='pca',
+        learning_rate='auto'
+    )
+    reduced_embeddings = tsne.fit_transform(embeddings)
+    return reduced_embeddings
 def process_cluster_labels(df):
     # Step 1: Take unique cluster labels
     unique_labels = df['cluster_label'].unique().tolist()
