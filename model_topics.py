@@ -1,3 +1,14 @@
+import pandas as pd
+import numpy as np
+import re
+import string
+import matplotlib.pyplot as plt
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.manifold import TSNE
+from sentence_transformers import SentenceTransformer
+import hdbscan
+
 # ------------------------------
 # Second-level clustering using cluster labels
 # ------------------------------
